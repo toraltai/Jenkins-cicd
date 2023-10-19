@@ -1,0 +1,4 @@
+fastapi
+uvicorn
+py-grpc-prometheus
+tortoise-orm
