@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import prometheus_client
 from tortoise.contrib.fastapi import register_tortoise
-from prometheus_client import Counter, generate_latest, CONTENT_TYPE_LATEST
+from prometheus_client import Counter
 
 from fastapi import Response
 
@@ -18,7 +18,7 @@ async def hello():
 
 
 @app.get("/metrics")
-async def metrics():
+def metrics():
     return Response(
         media_type="text/plain",
         content=prometheus_client.generate_latest(),
